@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:main/screens/onboarding/screen_1.dart';
+import 'package:main/screens/favorites_screen.dart';
+import 'package:main/screens/home_screen.dart';
+import 'package:main/screens/onboarding/onboarding_screen.dart';
 import 'package:main/screens/signup_screen.dart';
-import 'screens/onboarding/screen_2.dart';
-import 'screens/onboarding/screen_3.dart';
+import 'package:main/widgets/navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,12 +18,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Hotelly',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: GoogleFonts.inter().fontFamily,
+        textButtonTheme: TextButtonThemeData(
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                    Colors.transparent))), // Here Im having the error
       ),
-      home: SignupScreen(),
+      home: TestScreen(),
     );
   }
 }
