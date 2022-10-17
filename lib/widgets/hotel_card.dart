@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../screens/booking_screen.dart';
+
 class HotelCard extends StatelessWidget {
   HotelCard(
       {super.key,
@@ -20,13 +22,24 @@ class HotelCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40.0),
+      padding: const EdgeInsets.only(top: 25.0, left: 10, right: 10),
       child: InkWell(
-        onTap: () {},
-        child: Card(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Bookingscreen(
+                        name: hotelName,
+                        location: hotelLocation,
+                      )));
+        },
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(25),
           child: Stack(children: [
-            Image.asset(
-              imagePath,
+            Card(
+              child: Image.asset(
+                imagePath,
+              ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -34,7 +47,7 @@ class HotelCard extends StatelessWidget {
                 Stack(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 100, left: 15),
+                      padding: const EdgeInsets.only(top: 125, left: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -47,26 +60,32 @@ class HotelCard extends StatelessWidget {
                             ),
                             textAlign: TextAlign.left,
                           ),
-                          Text(
-                            hotelLocation,
-                            style: TextStyle(
-                              color: Color.fromARGB(167, 255, 255, 255),
-                              fontSize: 18,
-                            ),
-                            textAlign: TextAlign.left,
-                          ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 18.0),
-                                child: Text(
-                                  '$price',
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 159, 159, 159),
-                                      fontSize: 18),
-                                  textAlign: TextAlign.start,
+                              Text(
+                                '- ${hotelLocation}',
+                                style: TextStyle(
+                                  color: Color.fromARGB(167, 255, 255, 255),
+                                  fontSize: 18,
                                 ),
+                                textAlign: TextAlign.left,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 18.0),
+                                    child: Text(
+                                      '$price',
+                                      style: TextStyle(
+                                          color: Color.fromARGB(
+                                              255, 159, 159, 159),
+                                          fontSize: 18),
+                                      textAlign: TextAlign.start,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),

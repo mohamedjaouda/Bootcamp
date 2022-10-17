@@ -17,7 +17,7 @@ class _SearchInputState extends State<SearchInput> {
               Flexible(
                 flex: 1,
                 child: TextField(
-                  cursorColor: Colors.grey,
+                  cursorColor: Color.fromARGB(255, 82, 82, 82),
                   decoration: InputDecoration(
                       fillColor: Color.fromARGB(244, 255, 255, 255),
                       filled: true,

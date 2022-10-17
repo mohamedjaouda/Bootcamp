@@ -11,7 +11,10 @@ class HeadingSearchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset('assets/images/homepagebackground.png'),
+        Image.asset(
+          'assets/images/homepagebackground.png',
+          fit: BoxFit.fill,
+        ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

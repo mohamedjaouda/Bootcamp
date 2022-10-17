@@ -13,7 +13,7 @@ class Homepage extends StatelessWidget {
   List<Hotel> hotels = [
     Hotel(
         hotelLocation: 'Hotel Location',
-        hotelName: 'Hotel Name',
+        hotelName: 'Hotel 1',
         imagepath: 'assets/images/bedroom.png',
         price: 20),
     Hotel(
